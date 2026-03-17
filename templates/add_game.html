@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="form-container">
+
+<h2>Add New Game</h2>
+
+<form method="POST">
+
+<label>Game Name</label>
+<input type="text" name="name" required>
+
+<label>System</label>
+<select name="system">
+<option value="PS5">PS5</option>
+<option value="PC">Gaming PC</option>
+<option value="Steering Wheel">Steering Wheel</option>
+</select>
+
+<label>Price</label>
+<input type="number" name="price" required>
+
+<button type="submit">Add Game</button>
+
+</form>
+
+</div>
+
+{% endblock %}

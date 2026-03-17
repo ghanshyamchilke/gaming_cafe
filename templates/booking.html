@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>Book Gaming System</h1>
+
+<div class="card">
+
+<form method="POST">
+
+<label>Select Game</label>
+
+<select name="game">
+
+{% for game in games %}
+<option value="{{game.id}}">{{game.name}}</option>
+{% endfor %}
+
+</select>
+
+<label>Select System</label>
+
+<select name="system">
+
+<option>PlayStation 5</option>
+<option>Gaming PC</option>
+<option>Racing Simulator</option>
+
+</select>
+
+<label>Time Slot</label>
+
+<select name="slot">
+
+<option>10AM - 11AM</option>
+<option>11AM - 12PM</option>
+<option>12PM - 1PM</option>
+<option>1PM - 2PM</option>
+<option>2PM - 3PM</option>
+
+</select>
+
+<label>Mobile</label>
+
+<input type="text" name="mobile" required>
+
+<button type="submit">Confirm Booking</button>
+
+</form>
+
+</div>
+
+{% endblock %}

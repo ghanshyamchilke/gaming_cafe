@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1 class="page-title">🎮 Gaming Library</h1>
+
+<div class="games-container">
+
+{% for game in games %}
+
+<div class="game-card">
+
+<div class="game-image">
+
+<img src="/static/images/games/{{game.image}}" alt="{{game.name}}">
+
+<span class="price-badge">₹{{game.price}}/hr</span>
+
+</div>
+
+<div class="game-info">
+
+<h3>{{game.name}}</h3>
+
+<p class="system">{{game.system}}</p>
+
+<a href="/booking" class="play-btn">Play Now</a>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}

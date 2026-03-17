@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1 class="title">📅 Booking Requests</h1>
+
+<table class="admin-table">
+
+<tr>
+<th>User</th>
+<th>Game</th>
+<th>Mobile</th>
+<th>Slot</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+{% for b in bookings %}
+
+<tr>
+
+<td>{{b.name}}</td>
+
+<td>{{b.game.name}}</td>
+
+<td>{{b.mobile}}</td>
+
+<td>{{b.time_slot}}</td>
+
+<td>{{b.status}}</td>
+
+<td>
+
+{% if b.status == "Pending" %}
+
+<a href="/admin/accept_booking/{{b.id}}" class="accept-btn">Accept</a>
+
+<a href="/admin/reject_booking/{{b.id}}" class="reject-btn">Reject</a>
+
+{% else %}
+
+Completed
+
+{% endif %}
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

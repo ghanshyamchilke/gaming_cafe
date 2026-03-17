@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>WELCOME TO <span>ULTIMATE GAMING CAFE</span></h1>
+
+<p>Experience Next-Level Gaming with PS5, Gaming PCs & Racing Simulators</p>  
+
+
+<div class="hero-buttons">
+
+<a href="/games" class="btn">Explore Games</a>
+<a href="/booking" class="btn2">Book Now</a>
+
+</div>
+</div>
+
+</section>
+
+<h2 class="section-title">🔥 Featured Games</h2>
+
+<div class="games-grid">
+
+{% for game in games %}
+
+<div class="game-card">
+
+<img src="/static/images/games/{{game.image}}" alt="{{game.name}}">
+
+<h3>{{game.name}}</h3>
+
+<p>{{game.system}}</p>
+
+<p class="price">₹{{game.price}} / hour</p>
+
+<a href="/booking" class="play-btn">Play Now</a>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+<section class="features">
+
+<div class="feature">
+
+<h3>⚡ High End PCs</h3>
+<p>RTX Powered Gaming Machines</p>
+
+</div>
+
+<div class="feature">
+
+<h3>🎮 PS5 Arena</h3>
+<p>4K Ultra HD Console Gaming</p>
+
+</div>
+
+<div class="feature">
+
+<h3>🏎 Racing Simulator</h3>
+<p>Professional Steering Wheel Setup</p>
+
+</div>
+
+</section>
+
+{% endblock %}

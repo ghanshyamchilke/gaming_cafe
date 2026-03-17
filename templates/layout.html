@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Gaming Cafe</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+<div>
+<a href="/">Gaming Cafe</a>
+</div>
+
+<div>
+<a href="/">Home</a>
+<a href="/games">Games</a>
+<a href="/booking">Book</a>
+<a href="/profile">Profile</a>
+<a href="/login">Login</a>
+<a href="/logout">Logout</a>
+</div>
+{% if session.get("is_admin") %}
+<a href="/admin/dashboard">Admin</a>
+{% endif %}
+</nav>
+
+<div class="container">
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+
+<div class="flash">
+
+{% for msg in messages %}
+<p>{{msg}}</p>
+{% endfor %}
+
+</div>
+
+{% endif %}
+{% endwith %}
+
+{% block content %}
+{% endblock %}
+
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
